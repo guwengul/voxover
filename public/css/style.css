@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+:root{
+  /* Font Fmily*/
+  --headerFontFamily: "Plus Jakarta Sans", sans-serif;
+  --bodyFontFamily: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  /* Colors */
+  --whiteColor: #fff;
+  --blackColor: #000;
+  --fadedBlack: rgb(51,51,51);
+  --tealColor: #00eec0;
+  --lightTealColor: rgb(200,250,250);
+}
+
+*,*::before,*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 62.5%;
+  box-sizing: inherit;
+  scroll-behavior: smooth;
+}
+
+body{
+ font-family: var(--bodyFontFamily);
+ line-height: 1.2;
+ font-weight: 500;
+ color: var(--fadedBlack);
+ background-color: var(--whiteColor);
+ overflow-x: hidden;
+ position: relative;
+}
+
+h1,h2,h3,h4,h5,h6{ font-family: var(--headerFontFamily);}
+img,svg,video,canvas{width: 100%; height: 100%; border-radius: inherit;}
+iframe{width: 100%; height: 100%;}
+span,a,button{display: block;}
+button{background: transparent; border: none; cursor: pointer;}
+a:link,a:visited{text-decoration: none; color: #1a1b1f;}
+li{list-style: none;}
+.btn{
+  padding: 1.5rem 3rem;
+  border-radius: .8rem;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.header{
+  padding: 2.5rem 12rem;
+  padding-bottom: 2rem;
+  width: 100%;
+  background-color: var(--whiteColor);
+  z-index: 300;
+}
+.sticky{
+  position: fixed;
+  box-shadow: 0rem .2rem .7rem rgba(0,0,0,.6);
+}
+
+nav, .header__logo-container, .header__lists, .header__cta, .header__btns{
+  display: flex;
+  align-items: center;
+}
+
+.header nav{
+  justify-content: space-between;
+}
+
+
+nav .header__logo-container{
+  gap: 1rem;
+}
+
+.header__logo-container .header__logo{
+  width: 4rem;
+}
+
+.header__logo-container a{
+  font-size: 2rem;
+}
+
+nav .header__cta{
+  gap: 15rem;
+  margin-left: 37rem;
+}
+
+
+nav .header__lists{
+gap: 3rem;
+}
+
+.header__lists li a{
+  text-transform: capitalize;
+  transition: all 200ms linear;
+  font-weight: 500;
+}
+
+.header__lists li a:hover{color: var(--tealColor);}
+
+.header__lists li a:active{transform: scale(.8);}
+
+nav a{
+  font-size: 1.5rem;
+}
+
+.btn.btn--ctn-sales{
+  border: 1px solid var(--tealColor);
+  margin-right: 1rem;
+  padding: 1.5rem 3rem;
+}
+
+nav .hamburger{
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: .3rem;
+  cursor: pointer;
+}
+
+.hamburger .hamburger--box{
+  width: 3rem;
+  height: .4rem;
+  border-radius: .5rem;
+  background-color: rgb(51,51,51);
+}
+
+.hamburger--box.hamburger--1{
+  animation:  700ms linear forwards;
+}
+
+.hamburger--box.hamburger--2{
+  width: 70%;
+  animation:  500ms linear forwards;
+}
+
+.hamburger--box.hamburger--3{
+  animation:  700ms linear forwards;
+}
+
+nav .header__cta.header__btns--md{
+  display: none;
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+  padding: 10rem 10rem 0rem 10rem;
+  transform: translateX(25rem);
+  background-color: white;
+  box-shadow: 0rem 1rem 1rem var(--fadedBlack);
+  transition: all 500ms linear;
+  z-index: 100;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+nav .header__cta.header__btns--md .header__lists{
+  display: flex;
+  flex-direction: column;
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+nav .header__cta.header__btns--md .header__btns{
+  width: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn.btn--close{
+  position: absolute;
+  top: 3rem;
+  font-size: 2rem;
+  color: black;
+  left: 0rem;
+}
+
+.spacing{
+padding: 0rem 12rem;
+padding-top: 10rem;
+padding-bottom: 4rem;
+}
+
+@keyframes fadeOut{
+  0%{
+    opacity: 1;
+    transform: scale(1);
+  }
+  100%{
+    transform: scale(.5);
+    opacity: 0;
+  }
+}
+
+@keyframes flipDown {
+  0%{
+    transform: rotate(0deg) translate(0rem);
+  }
+
+  100%{
+    transform: rotate(45deg) translate(1.1rem, .8rem);
+  }
+}
+
+@keyframes flipUp {
+  0%{
+    transform: rotate(0deg);
+  }
+
+  100%{
+    transform: rotate(-45deg) ;
+  }
+}
+
+@media (max-width: 1440px) {
+
+}
+
+@media (max-width: 1366px) {
+  .header{
+    padding: 2.5rem 9rem;
+  }
+
+  .spacing{
+    padding: 0rem 9rem;
+    padding-top: 10rem;
+    padding-bottom: 4rem;
+    }
+
+  /* HERO SECTION */
+  
+}
+
+
+/* xl */
+@media (max-width: 1280px) {
+.header{
+  padding: 2.5rem 7rem;
+}
+
+.spacing{
+  padding: 0rem 7rem;
+  padding-top: 10rem;
+  padding-bottom: 4rem;
+  }
+
+.header__logo-container a{
+  font-size: 1.5rem;
+}
+
+nav a{
+  font-size: 1.4rem;
+}
+
+nav .header__lists{
+  gap: 3.5rem;
+  }
+
+  .header__logo-container .header__logo{
+    width: 3.5rem;
+  }
+}
+
+/* lg */
+@media (max-width: 1024px) {
+
+.header{
+  padding: 2.5rem 7rem;
+}
+
+.header__btns--lg{
+  display: none;
+}
+
+nav .hamburger{
+  display: flex;
+}
+
+
+.header__logo-container .header__logo{
+  width: 4rem;
+}
+
+.header__logo-container a{
+  font-size: 1.8rem;
+}
+
+}
+
+/* md */
+@media (max-width: 800px) {
+  nav .header__cta.header__btns--md{
+    transform: translateX(2rem);
+  }
+}  
+  
+
+@media (max-width: 768px) {
+nav .header__cta.header__btns--md{
+  padding: 10rem 10rem 0rem 10rem;
+  transform: translateX(4rem);
+}
+}  
+
+
+/* sm */
+@media (max-width: 640px) {
+
+  nav .header__cta.header__btns--md{
+    padding: 10rem 10rem 0rem 10rem;
+    transform: translateX(-14rem);
+  }
+  }
+
+    /* xs */
+@media (max-width: 500px) {
+
+  section.section h2{
+    text-align: center;
+    font-size: 3rem;
+  }
+
+  nav .header__cta.header__btns--md{
+    padding: 10rem 10rem 0rem 10rem;
+    transform: translateX(-28rem);
+  }
+
+}
+
+
+  /* xs */
+@media (max-width: 475px) {
+
+  .header{
+    padding: 2.5rem 3rem;
+  }
+}
+
+@media (max-width: 428px) {
+}
+
+@media (max-width: 414px) {
+
+  nav .header__cta.header__btns--md{
+    transform: translateX(-32rem);
+  }
+}
+
+@media (max-width: 390px) {
+}
+
+@media (max-width: 375px) {
+
+}
+
+@media (max-width: 360px) {
+
+}
+
