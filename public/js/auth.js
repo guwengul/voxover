@@ -108,7 +108,7 @@ const validateEmail = () => {
       };
   
       // Use Fetch API to send data to backend
-      fetch("https://voxover-ai-rucw.onrender.com/contact-us", {
+      fetch("https://www.voxoverai.com/contact-us", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
